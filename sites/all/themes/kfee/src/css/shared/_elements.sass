@@ -1,0 +1,64 @@
+// -----------------------------------------------------------------------------
+// Everything!
+// -----------------------------------------------------------------------------
+*, *::before, *::after
+  box-sizing: border-box
+// -----------------------------------------------------------------------------
+
+
+// -----------------------------------------------------------------------------
+// Links in general.
+// -----------------------------------------------------------------------------
+a
+  color: inherit
+  text-decoration: none
+
+.#{$ns}-link-primary::before
+  color: $color-gray-light
+  content: "\f105"
+  display: inline-block
+  font-family: FontAwesome
+  font-size: inherit
+  padding-right: 8px
+
+// if a link has one of those classes, don't apply link styling
+$classes-to-ignore: ()
+$classes-to-ignore: append($classes-to-ignore, ".#{$ns}-link-primary")
+$classes-to-ignore: append($classes-to-ignore, ".#{$ns}-link-tertiary")
+$classes-to-ignore: append($classes-to-ignore, "[class*=#{$ns}-btn]")
+$classes-to-ignore: append($classes-to-ignore, "[class*=#{$ns}s-btn]")
+$selector: "a"
+
+@each $class in $classes-to-ignore
+  $selector: $selector + ":not(#{$class})"
+
+#{$selector}
+  border-bottom: 1px solid $color-gray-medium
+  color: inherit
+  padding-bottom: 2px
+  text-decoration: none
+  transition: border-color 1s
+
+  &:hover
+    border-bottom-color: $color-gray-lighter
+// -----------------------------------------------------------------------------
+
+
+// -----------------------------------------------------------------------------
+// Default body styling.
+// -----------------------------------------------------------------------------
+body
+  background-color: $background-color
+  background: linear-gradient(180deg, #171617, transparent 350px) $background-color
+// -----------------------------------------------------------------------------
+
+
+// -----------------------------------------------------------------------------
+// Default image styling.
+// -----------------------------------------------------------------------------
+img
+  display: block
+  margin-left: auto
+  margin-right: auto
+  max-width: 100%
+// -----------------------------------------------------------------------------

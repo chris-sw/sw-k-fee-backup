@@ -1,0 +1,29 @@
+// -----------------------------------------------------------------------------
+// Breadcrumb navigation.
+// -----------------------------------------------------------------------------
+.#{$ns}-breadcrumb
+  font-size: 0.8125rem
+  list-style-type: none
+  margin: 0
+  padding: 0
+
+  &::after
+    +group
+
+  li
+    float: left
+    margin-left: 8px
+    vertical-align: top
+
+    &:not(:last-child)::after
+      color: $color-gray-light
+      content: "\f105"
+      display: inline-block
+      font-family: FontAwesome
+      font-size: 0.875rem
+      padding-left: 8px
+      vertical-align: top
+
+    &.is-active
+      color: $color-gray-light
+// -----------------------------------------------------------------------------

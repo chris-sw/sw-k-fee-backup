@@ -1,0 +1,76 @@
+// -----------------------------------------------------------------------------
+// Standard videos.
+// -----------------------------------------------------------------------------
+.#{$ns}-video
+  @extend %k-box
+
+  background-position: center center
+  background-repeat: no-repeat
+  background-size: cover
+  padding-top: 75%
+
+  // black gradient
+  &::before
+    +k-full-cover
+    +k-black-gradient(0deg, 50%, null)
+
+    background-size: 100% 65%
+    background-repeat: no-repeat
+    background-position: left bottom
+    z-index: 1
+
+  &.is-playing .#{$ns}-video-stage
+    opacity: 1
+    transition: opacity 1s, visibility 0s
+    visibility: visible
+    z-index: $z-index-video
+
+
+  @media (min-width: $viewport-medium)
+    padding-top: 37.5%
+
+    &.has-text-left
+      padding-top: 75%
+
+      &::before
+        display: none
+
+      .#{$ns}-video-text
+        bottom: 50%
+        left: $grid-padding-medium
+        right: auto
+        top: auto
+
+
+  @media (min-width: $viewport-large)
+    &::before
+      display: none
+
+// -----------------------------------------------------------------------------
+
+.#{$ns}-video-text
+  left: 0
+  position: absolute
+  right: 0
+  text-align: center
+  top: 50%
+  transform: translateY(-50%)
+  z-index: 2
+
+// -----------------------------------------------------------------------------
+
+.#{$ns}-video-stage
+  background-color: #000
+  opacity: 0
+  transition: visibility 0s
+  visibility: hidden
+
+  &, video
+    +k-full-cover
+
+  .#{$ns}-btn-cancel
+    position: absolute
+    right: 0
+    top: 0
+    z-index: $z-index-video
+// -----------------------------------------------------------------------------

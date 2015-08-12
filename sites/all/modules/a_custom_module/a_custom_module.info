@@ -1,0 +1,6 @@
+name = K-Fee 
+description = Custom tweaks and functionality 
+project = "A Custom Module for" 
+version = "7.x-1.x-dev" 
+core = "7.x" 
+package = "A Custom Module for..." 

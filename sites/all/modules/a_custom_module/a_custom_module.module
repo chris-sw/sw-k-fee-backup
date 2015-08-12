@@ -1,0 +1,71 @@
+<?php
+
+/**
+ * Implementation of hook_init().
+ *
+ * 
+ */
+
+
+
+function a_custom_module_init() { 
+	
+	//	print "Hello Custom!"; 
+	//	drupal_set_message(t('Hello world! This is %name!', array(%name => 'Swearing at Computers'))); 
+	//	drupal_add_css('body {background-color: red;}',$option['type'] = 'inline');
+	//	drupal_set_message(t('This is a development Envoirment'), $type = 'status', $repeat = TRUE) ;
+	
+		drupal_add_css(drupal_get_path('module', 'a_custom_module') . '/a_custom_module.css', array('group' => CSS_THEME, 'every_page' => TRUE, 'weight' => 500));
+	
+
+}
+
+
+
+
+
+
+function a_custom_module_form_alter(&$form, &$form_state, $form_id) {
+
+/*   ###########################################################################
+if ($form_id == 'search_block_form') {
+        
+    } else {
+    
+    
+  //dpm($form);  //shows original $form array
+  //$form['author']['#type'] = 'fieldset';
+  //$form['author']['#title'] = 'Your Information';
+  //$form['author']['#collapsible'] = FALSE;
+  $form['author']['#weight'] = 1;
+  $form['options']['#weight'] = 2;
+
+
+  }
+  
+###########################################################################		*/  
+/*
+    if ($form_id == "bestellung_node_form") {
+    $form['actions']['submit']['#value'] = 'Abzüge bestellen';
+    }  
+  
+    if ($form_id == "standard_bestellung_node_form") {
+    $form['actions']['submit']['#value'] = 'Standart-Abzüge bestellen';
+    } 
+     
+    if ($form_id == "premium_bestellung_node_form") {
+    $form['actions']['submit']['#value'] = 'Premium-Abzüge bestellen';
+    }  
+    
+    if ($form_id == "grossformat_bestellung_node_form") {
+    $form['actions']['submit']['#value'] = 'Großformat-Abzüge bestellen';
+    }
+  
+  
+*/  
+}
+
+
+
+
+

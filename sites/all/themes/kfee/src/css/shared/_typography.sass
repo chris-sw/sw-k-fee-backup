@@ -1,0 +1,103 @@
+// -----------------------------------------------------------------------------
+// Common font weights.
+// (http://www.w3.org/TR/css3-fonts/#font-weight-prop)
+// -----------------------------------------------------------------------------
+// 100 - Thin
+// 200 - Extra Light (Ultra Light)
+// 300 - Light
+// 400 - Normal
+// 500 - Medium
+// 600 - Semi Bold (Demi Bold)
+// 700 - Bold
+// 800 - Extra Bold (Ultra Bold)
+// 900 - Black (Heavy)
+// -----------------------------------------------------------------------------
+
+
+
+// Fonts.com provided Gill Sans variants:
+
+// font-family:'Gill Sans W01 Light';
+// font-family:'GillSansW01-LightItalic';
+// font-family:'Gill Sans W01 Book';
+// font-family:'GillSansW01-BookItalic';
+// font-family:'Gill Sans W01 Medium';
+// font-family:'GillSansW01-MediumItali';
+// font-family:'Gill Sans W01 Bold';
+// font-family:'GillSansW01-BoldItalic';
+// font-family:'Gill Sans W01 Heavy';
+// font-family:'GillSansW01-HeavyItalic';
+// font-family:'GillSansW01-ExtraBold';
+// font-family:'GillSansW01-UltraBold';
+// font-family:'Gill Sans W01 Shadow';
+// font-family:'Gill Sans W01 Cond';
+// font-family:'GillSansW01-CondensedBd';
+// font-family:'GillSansW01-CondensedUl';
+// font-family:'GillSansW01-XCondensedB';
+// font-family:'GillSansW01-LightShadow';
+// font-family:'Gill Sans Infant W01';
+// font-family:'GillSansInfantW01-Itali';
+// font-family:'GillSansInfantW01-Bold';
+// font-family:'GillSansInfantW01-BoldI';
+// font-family:'GillSansW01-DisplayBold_709822';
+// font-family:'GillSansW01-DisplayXtra';
+// font-family:'GillSansW01-DisplayBold_709825';
+
+
+// -----------------------------------------------------------------------------
+// Document basics.
+// -----------------------------------------------------------------------------
+:root
+  color: $text-primary
+  font:
+    family: "Gill Sans W01 Light", sans-serif
+    size: 16px
+  line-height: 1.5em
+// -----------------------------------------------------------------------------
+
+
+// -----------------------------------------------------------------------------
+// Headlines.
+// -----------------------------------------------------------------------------
+h1,
+h2,
+h3
+  color: $headline-color
+  font:
+    family: "Gill Sans W01 Light", sans-serif
+    weight: normal
+  margin-top: 0
+
+h1
+  @extend %font-smoothing-antialiased
+
+  font-size: 2.125rem
+  line-height: 2.375rem
+
+  @media (min-width: $viewport-large)
+    font-size: 3rem
+    line-height: 3.375rem
+
+h2
+  @extend %font-smoothing-antialiased
+
+  font-size: 1.75rem
+  line-height: 2.1875rem
+
+h3
+  font-family: "Gill Sans W01 Bold", sans-serif
+  font-size: 0.8125rem
+  line-height: 1.25rem
+  text-transform: uppercase
+
+p
+  font-size: 0.875rem
+  line-height: $line-height
+  margin: 0
+
+  &:not(:last-child)
+    margin-bottom: $line-height
+
+.#{$ns}-text-secondary
+  color: $text-secondary
+// -----------------------------------------------------------------------------

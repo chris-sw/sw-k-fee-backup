@@ -1,0 +1,26 @@
+From a9f68c3897574e1e0b17cf4c5f71300d9a56fdcf Mon Sep 17 00:00:00 2001
+From: Ferrari <Ferrari@599946.no-reply.drupal.org>
+Date: Tue, 7 Oct 2014 14:40:08 -0300
+Subject: [PATCH] Issue #1717404 by Heggan: Fixed Notice: Undefined index:
+ #attributes in mothership_select() results in Recoverable fatal error .
+
+---
+ mothership/functions/form.php | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/mothership/functions/form.php b/mothership/functions/form.php
+index f3bb8c9..735702c 100644
+--- a/mothership/functions/form.php
++++ b/mothership/functions/form.php
+@@ -524,7 +524,7 @@ function mothership_fieldset($variables) {
+     _form_set_class($element, array('form-wrapper'));
+   }
+ 
+-  $output = '<fieldset' . drupal_attributes($element['#attributes']) . '>';
++  $output = '<fieldset' . (is_array($element['#attributes']) ? drupal_attributes($element['#attributes']) : null) . '>';
+   if (!empty($element['#title'])) {
+     // Always wrap fieldset legends in a SPAN for CSS positioning.
+     $output .= '<legend><span class="fieldset-legend">' . $element['#title'] . '</span></legend>';
+-- 
+1.9.1
+

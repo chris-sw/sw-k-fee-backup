@@ -1,0 +1,36 @@
+// -----------------------------------------------------------------------------
+// Global grid.
+// -----------------------------------------------------------------------------
+.#{$ns}-grid
+  margin-left: $grid-margin-small
+  margin-right: $grid-margin-small
+  max-width: $grid-max-width
+
+  .row::after,
+  [class*="col-"]::after
+    +group
+
+  @media (min-width: $viewport-large)
+    margin-left: $grid-margin-large
+    margin-right: $grid-margin-large
+
+    [class*="col-"]
+      float: left
+
+      &:not(:first-child)
+        margin-left: $grid-gutter-large
+
+    .col-1-2
+      width: calc(50% - #{$grid-gutter-large / 2})
+
+    .col-1-3
+      width: calc(100% / 3 - #{$grid-gutter-large * 2 / 3})
+
+    .col-2-3
+      width: calc(100% / 1.5 - #{$grid-gutter-large / 3})
+
+  // if grid max width is reached center grid
+  @media (min-width: #{$grid-max-width + ($grid-margin-large * 2)})
+    margin-left: auto
+    margin-right: auto
+// -----------------------------------------------------------------------------

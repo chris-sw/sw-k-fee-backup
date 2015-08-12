@@ -1,0 +1,48 @@
+// -----------------------------------------------------------------------------
+// Custom mixins/functions will find it's place in here.
+// -----------------------------------------------------------------------------
+%appearance-none
+  -webkit-appearance: none
+  -moz-appearance: none
+  -ms-appearance: none
+  -o-appearance: none
+  appearance: none
+
+%font-smoothing-antialiased
+  font-family: 'Gill Sans W01 Book'
+
+  -moz-osx-font-smoothing: grayscale
+  -webkit-font-smoothing: antialiased
+
+%font-smoothing-subpixel-antialiased
+  -moz-osx-font-smoothing: auto
+  -webkit-font-smoothing: subpixel-antialiased
+
+=group
+  clear: both
+  content: ""
+  display: table
+
+%k-box
+  background-color: #000
+  box-shadow: 0 0 10px 1px rgba($color-gray-light, 0.3)
+  margin-bottom: $grid-gutter-small
+  padding: $grid-padding-small
+  position: relative
+
+  @media (min-width: $viewport-large)
+    margin-bottom: $grid-gutter-large
+    padding: $grid-padding-large
+
+=k-full-cover
+  bottom: 0
+  content: ""
+  left: 0
+  position: absolute
+  right: 0
+  top: 0
+
+=k-black-gradient($dregee, $first-stop, $second-stop)
+  background-image: linear-gradient($dregee, #000 $first-stop, transparent $second-stop)
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#006d0019', GradientType=0) /* ie6-9 */
+// -----------------------------------------------------------------------------

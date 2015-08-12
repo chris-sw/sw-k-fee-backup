@@ -1,0 +1,17 @@
+/*
+body {
+	background-image: url(Development-Server.png) !important;
+	background-repeat: repeat-y !important;
+
+}
+*/
+
+.view-id-dashboard .views-field-changed,
+.view-id-dashboard .views-field-created {
+	width: 200px !important;
+	text-align: right !important;
+}
+
+.view-id-dashboard th.views-field-title {
+	min-width: 300px !important;
+}

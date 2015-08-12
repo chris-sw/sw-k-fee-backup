@@ -1,0 +1,220 @@
+// -----------------------------------------------------------------------------
+// Kfee button placeholder.
+// -----------------------------------------------------------------------------
+%k-button
+  border-radius: 1.25rem
+  border: 0
+  cursor: pointer
+  display: inline-block
+  font-size: 1.25rem
+  height: 40px
+  line-height: 1em
+  outline: 0
+  padding: 8px 20px
+  position: relative
+// -----------------------------------------------------------------------------
+
+
+// -----------------------------------------------------------------------------
+// Kfee primary buttons.
+// -----------------------------------------------------------------------------
+.#{$ns}-btn-primary
+  @extend %appearance-none
+  @extend %font-smoothing-antialiased
+  @extend %k-button
+
+  background-color: $color-white
+  color: #000
+  transition: all 1s
+
+  &:hover
+    box-shadow: 0 0 20px 2px rgba(#000, 0.25)
+    transform: scale(1.05) perspective(1px)
+
+  &::before
+    content: "\f105"
+    font-family: FontAwesome
+    padding-right: 8px
+// -----------------------------------------------------------------------------
+
+
+// -----------------------------------------------------------------------------
+// Kfee secondary buttons.
+// -----------------------------------------------------------------------------
+.#{$ns}-btn-secondary
+  @extend %appearance-none
+  @extend %k-button
+  @extend %font-smoothing-antialiased
+
+  background-color: transparent
+  box-shadow: inset 0 0 0 1px rgba($color-gray-lightest, 0.5)
+  font-size: 1rem
+  line-height: 1em
+  transition: all 1s
+
+  &:hover
+    box-shadow: inset 0 0 0 1px rgba($color-gray-lightest, 0.75)
+    transform: scale(1.05) perspective(1px)
+
+  &::before
+    content: "\f105 "
+    font-family: FontAwesome
+    padding-right: 8px
+// -----------------------------------------------------------------------------
+
+
+// -----------------------------------------------------------------------------
+// Kfee cancel button.
+// -----------------------------------------------------------------------------
+.#{$ns}-btn-cancel
+  @extend %appearance-none
+
+  background-color: transparent
+  border: 0
+  color: $color-gray-medium
+  cursor: pointer
+  display: inline-block
+  font-size: 2rem
+  outline: 0
+  padding: 25px
+  position: relative
+  transition: color 1s
+
+  &:hover
+    color: $color-gray-lighter
+
+  &::before
+    content: "\00d7"
+    left: 50%
+    position: absolute
+    top: 52.5%
+    transform: translate(-50%, -50%)
+// -----------------------------------------------------------------------------
+
+
+// -----------------------------------------------------------------------------
+// Kfee primary shop buttons.
+// -----------------------------------------------------------------------------
+.#{$ns}s-btn-primary
+  @extend %appearance-none
+  @extend %font-smoothing-antialiased
+  @extend %k-button
+
+  background-color: $color-white
+  color: #000
+  overflow: hidden
+  bottom: 1px
+
+  &:hover
+    .#{$ns}s-btn-primary-icon::before
+      bottom: 5px
+      opacity: 1
+
+  &.activated
+    .#{$ns}s-btn-primary-icon
+      opacity: 0
+      transform: scale(1.5)
+
+    .#{$ns}s-btn-primary-text
+      &::before
+        opacity: 1
+        top: 52.5%
+        transform: translateY(-50%)
+
+      &::after
+        top: 20px
+        opacity: 0
+
+.#{$ns}s-btn-primary-icon
+  display: inline-block
+  height: 18px
+  margin-right: 4px
+  position: relative
+  transition: transform 0.125s, opacity 0.125s
+  width: 14px
+
+  &::before
+    background-color: #000
+    border-radius: 50%
+    bottom: 20px
+    content: ""
+    height: 10px
+    left: 50%
+    opacity: 0
+    position: absolute
+    transform: translateX(-50%)
+    transition: all 0.5s
+    width: 10px
+
+  &::after
+    +k-full-cover
+
+    background-image: url("../images/icons/shopping-bag-primary.png")
+    background-position: center center
+    background-repeat: no-repeat
+    content: ""
+
+.#{$ns}s-btn-primary-text
+  display: inline-block
+
+  &::before
+    content: attr(data-text-success)
+    left: 0
+    opacity: 0
+    position: absolute
+    right: 0
+    text-align: center
+    top: -20px
+    transition: all 0.25s
+
+  &::after
+    top: -1px
+    content: attr(data-text-normal)
+    position: relative
+    transition: all 0.25s
+
+.#{$ns}s-btn-primary-amount
+  @extend %k-button
+
+  box-shadow: inset 0 0 0 3px rgba($color-gray-lightest, 0.5)
+  padding: 2px 3.5rem 1px 0
+  position: relative
+
+  &::before
+    content: "\f107"
+    font-family: FontAwesome
+    position: absolute
+    right: 2.5rem
+    top: 55%
+    transform: translateY(-50%)
+
+  select
+    @extend %appearance-none
+    @extend %k-button
+
+    background-color: transparent
+    color: $text-primary
+    padding-right: 5px
+    position: relative
+
+  + .#{$ns}s-btn-primary
+    left: -2.25rem
+// -----------------------------------------------------------------------------
+
+
+// -----------------------------------------------------------------------------
+// Kfee secondary shop buttons.
+// -----------------------------------------------------------------------------
+.#{$ns}s-btn-secondary
+  @extend .#{$ns}-btn-secondary
+
+  padding-left: 40px
+
+  &::before
+    content: url("../images/icons/shopping-bag-secondary.png")
+    display: inline-block
+    left: 20px
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+// -----------------------------------------------------------------------------

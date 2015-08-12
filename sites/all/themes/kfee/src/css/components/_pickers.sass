@@ -1,0 +1,28 @@
+// -----------------------------------------------------------------------------
+// Color picker.
+// -----------------------------------------------------------------------------
+.#{$ns}-color-picker
+  margin: 0
+  padding: 0
+  list-style-type: none
+
+  &::after
+    +group
+
+  li
+    border-radius: 50%
+    box-shadow: 0 0 0 4px rgba($color-white, 0.1)
+    cursor: pointer
+    float: left
+    height: 17px
+    margin-bottom: 12px
+    transition: box-shadow 1s
+    width: 17px
+
+    &:not(:last-child)
+      margin-right: 12px
+
+    &.is-active,
+    &:hover
+      box-shadow: 0 0 0 4px rgba($color-white, 0.75), inset 0 3px 6px rgba(#000, 0.33)
+// -----------------------------------------------------------------------------

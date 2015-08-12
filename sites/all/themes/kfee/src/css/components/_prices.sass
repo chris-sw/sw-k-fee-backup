@@ -1,0 +1,51 @@
+// -----------------------------------------------------------------------------
+// Prices.
+// -----------------------------------------------------------------------------
+.#{$ns}-price,
+.#{$ns}-price-primary
+  font-size: 1.75rem
+
+  &::before
+    font-size: 1.375rem
+
+.#{$ns}-price-secondary
+  color: $color-gray-lightest
+  font-size: 1.25rem
+
+  &::before
+    font-size: 0.875rem
+
+.#{$ns}-price,
+.#{$ns}-price-primary,
+.#{$ns}-price-secondary
+  @extend %font-smoothing-antialiased
+
+  display: inline-block
+  position: relative
+
+  // euro by default
+  &::before
+    color: $color-gray-light
+    content: "\20ac"
+    display: inline-block
+    padding-right: 8px
+    text-align: right
+
+  &[data-before]::before
+    content: attr(data-before)
+
+  &.is-crossed
+    padding-right: 0.25rem
+
+    &::before
+      padding-left: 0.25rem
+
+    &::after
+      background-color: $color-gray-light
+      content: ""
+      height: 1px
+      left: 0
+      position: absolute
+      right: 0
+      top: 46%
+// -----------------------------------------------------------------------------

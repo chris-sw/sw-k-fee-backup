@@ -1,0 +1,120 @@
+// -----------------------------------------------------------------------------
+// Standard boxes.
+// -----------------------------------------------------------------------------
+.#{$ns}-box
+  @extend %k-box
+
+  @media (min-width: $viewport-medium)
+    &.md-half
+      float: left
+      width: calc(50% - #{$grid-gutter-medium / 2})
+
+      &:not(:first-of-type)
+        margin-left: $grid-gutter-medium
+
+  @media (min-width: $viewport-large)
+    &.md-half
+      float: none
+      width: auto
+
+      &:not(:first-of-type)
+        margin-left: 0
+
+.#{$ns}-box-copy
+  @extend %font-smoothing-antialiased
+
+  color: $text-secondary
+
+  &:not(:last-child)
+    margin-bottom: $line-height
+// -----------------------------------------------------------------------------
+
+
+// -----------------------------------------------------------------------------
+// Boxes with teaser images.
+// -----------------------------------------------------------------------------
+.#{$ns}-box[style*="background-image"]
+  background-size: 0
+  overflow: hidden
+  padding-top: 65%
+
+  &:hover::before
+    transform: scale(1.025)
+
+  // copy background image for hover effects
+  &::before
+    +k-full-cover
+
+    background-image: inherit
+    background-position: top right
+    background-repeat: no-repeat
+    transform-origin: 75% 50%
+    transition: transform 2s
+    z-index: 1
+
+  // black gradient
+  &::after
+    +k-full-cover
+    +k-black-gradient(0deg, 50%, null)
+
+    background-size: 100% 65%
+    background-repeat: no-repeat
+    background-position: left bottom
+    z-index: 2
+
+  &.is-right::before
+    background-position: center top
+    background-size: cover
+
+  // anything in there should be above the gradient
+  *
+    position: relative
+    z-index: 3
+
+  @media (min-width: $viewport-medium)
+    &.md-half
+      padding-top: 33.33%
+
+    &:not(.md-half):not(.is-right):not(.md-full)
+      padding-top: $grid-padding-medium
+
+      &::after
+        +k-black-gradient(90deg, 65%, null)
+
+        background-size: 80% 100%
+        background-repeat: no-repeat
+        background-position: left bottom
+
+      .#{$ns}-box-headline,
+      .#{$ns}-box-copy
+        width: 50%
+
+  @media (min-width: $viewport-large)
+    &.md-half,
+    &.is-right
+      padding-top: $grid-padding-large
+
+    &.is-right
+      text-align: right
+
+      &::before
+        background-position: left top
+
+      &::after
+        +k-black-gradient(-90deg, 30%, 70%)
+
+        background-size: 100%
+
+      .#{$ns}-box-headline,
+      .#{$ns}-box-copy
+        margin-left: auto
+
+    .#{$ns}-box-headline,
+    .#{$ns}-box-copy
+      width: 50%
+
+    &.md-full
+      .#{$ns}-box-headline,
+      .#{$ns}-box-copy
+        width: 100%
+// -----------------------------------------------------------------------------

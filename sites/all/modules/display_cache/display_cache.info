@@ -1,0 +1,14 @@
+name = Display Cache
+description = Provides views and panels plugins to display rendered entities from cache.
+package = Performance
+core = "7.x"
+
+dependencies[] = entity
+
+files[] = tests/display_cache.test
+; Information added by Drupal.org packaging script on 2014-12-29
+version = "7.x-1.0+3-dev"
+core = "7.x"
+project = "display_cache"
+datestamp = "1419859981"
+

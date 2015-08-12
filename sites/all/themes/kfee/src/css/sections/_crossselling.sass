@@ -1,0 +1,26 @@
+// -----------------------------------------------------------------------------
+// Crossselling component.
+// -----------------------------------------------------------------------------
+.#{$ns}-crossselling
+.#{$ns}-crossselling-headline
+  text-align: center
+
+.#{$ns}-crossselling-product
+  @extend %k-box
+
+  padding-top: 20px
+
+  .#{$ns}-sales-banner
+    position: absolute
+    top: inherit
+    right: 0
+
+  .#{$ns}-price,
+  .#{$ns}-price-primary,
+  .#{$ns}-price-secondary
+    position: relative
+    top: 10px
+
+.#{$ns}-crossselling-product-image
+  margin-bottom: $line-height
+// -----------------------------------------------------------------------------
