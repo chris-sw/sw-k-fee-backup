@@ -7,6 +7,7 @@
     <script src="<?php print base_path(); print path_to_theme(); ?>/js/plugins.js"></script>
     <script src="<?php print base_path(); print path_to_theme(); ?>/js/app.js"></script>
     <link href="<?php print base_path(); print path_to_theme(); ?>/css/style.css"  />
+    
   
   </head>
   <body>
